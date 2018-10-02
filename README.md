@@ -1,4 +1,4 @@
-<h1>Simple to do app</h1>
+<h1>TO DO APPLICATION</h1>
 This is frontend and backend simple "to-do" application. Live preview is on heroku: https://to-do-app123.herokuapp.com/
 
 <h1>Requirements</h1>

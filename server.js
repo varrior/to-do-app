@@ -18,6 +18,6 @@ app.use(express.static(__dirname));
 //Send start file
 app.get('*', (req, res) => res.sendFile(path.join(`${__dirname}/frontend/index.html`)));
 //Connect to mongodb database
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds2134583.mlab.com:145683/to-do-app', {useNewUrlParser: true}, err => err?console.log(err):console.log('Successfully connected to MongoDB'));  
+mongoose.connect('mongodb://localhost:27017/to-do-app', {useNewUrlParser: true}, err => err?console.log(err):console.log('Successfully connected to MongoDB'));  
 
 http.listen(port, (err)=>err?console.log(err):console.log(`Server running on ${port}`))

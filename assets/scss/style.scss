@@ -1,0 +1,204 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
+@mixin pad($pads...){
+    padding: $pads
+}
+@mixin margin($margins...){
+    margin: $margins
+}
+$taskDone: #9eb2c0;
+$taskToDo: #2e3641;
+$white: #fff;
+$whiteGrey: #ddd;
+$borderColor: rgb(228, 155, 167);
+$font: 'Lato', sans-serif;
+body {
+    background: $white;
+    font-family: $font;
+    height: 100vh;
+    @include margin(0)
+}
+#toDoList{
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    max-width: 700px;
+    position: relative;
+    margin-top: 90px;
+    header {
+        .header {
+            display: flex;
+            background: #121f31;
+            .col-2 {
+                width: 10%;
+                border-right: 1px solid $borderColor;
+                position: relative;
+                &:before {
+                    border-left: 1px solid $borderColor;
+                    height: 100%;
+                    position: absolute;
+                    top:0;
+                    right: 5px;
+                    content: ''; 
+                }
+            }
+            .col-10 {
+                width: 90%;
+                h3 {
+                    color: $whiteGrey;
+                    font-size: 20px;
+                    @include margin(0);
+                    @include pad(20px 15px); 
+                }  
+            }
+
+        }
+    }
+    section {
+        ul {
+            @include pad(0);
+            @include margin(0);
+            
+            li {
+                display: flex;
+                list-style: none;
+                border-bottom: 1px solid #9eb2c0;
+                color: $taskToDo;
+                .col-2 {
+                    @include pad(10px 0);
+                    width: 10%;
+                    text-align: center;
+                    border-right: 1px solid $borderColor;
+                    position: relative;
+                    label {
+                        display: block;
+                        position: relative;
+                        cursor: pointer;
+                        font-size: 22px;
+                        user-select: none;
+                        input {
+                            @include margin(0);
+                            vertical-align: middle;
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                            &:checked ~ .customCheck {
+                                background-color: transparent;
+                            }
+                            &:checked ~ .customCheck:after {
+                                display: block;
+                            }
+                        }                   
+                        .customCheck {
+                            position: absolute;
+                            top: 3px;
+                            left:0;
+                            right:0;
+                            margin-left:auto;
+                            margin-right:auto;
+                            height: 18px;
+                            width: 18px;
+                            border: 1px solid $taskDone;
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                display: none;
+                            }
+                            &:after {
+                                left: 5px;
+                                top: 2px;
+                                width: 5px;
+                                height: 10px;
+                                border: solid rgb(27, 218, 27);
+                                border-width: 0 3px 3px 0;
+                                transform: rotate(45deg);
+                            }
+                        }     
+                        &:hover input ~ .customCheck{
+                            background-color: #ccc;
+                        }
+                    }
+
+                    &:before {
+                        border-left: 1px solid $borderColor;
+                        height: 100%;
+                        position: absolute;
+                        top:0;
+                        right: 5px;
+                        content: ''; 
+                    }
+                    button {
+                        background: transparent;
+                        border: none;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    .addTask {
+                        color: $taskDone;
+                        font-size: 18px;
+                    }
+                }
+                .col-10 {
+                    @include pad(10px 20px 10px 15px);
+                    width: 90%;
+                    text-align: left;
+                    p {
+                        font-size: 18px;
+                        float: left;
+                        @include margin(0);
+                    }
+                    span {
+                        float: right;
+                        font-size: 18px;
+                        top: 4px;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .newTask {
+                        border: none;
+                        width: 100%;
+                        height: 100%;
+                        &:focus {
+                            outline: none;
+                        }
+                    } 
+                    &:hover {
+                        cursor: move
+                    }
+                }
+            }
+            li.taskDone {
+                color: $taskDone;
+                .col-10 {
+                    p {
+                        text-decoration: line-through;
+                    }
+                }
+            }
+            li.over {
+                transform: scale(1.1, 1.1);
+            }
+        }
+    }
+}
+.alert-success {
+    max-width: 700px;
+    margin: 20px auto;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+

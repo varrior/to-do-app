@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Simple to-app">
+        <meta author="Piotr Sikora">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple to-do app</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    </head>
+    <body>
+        <div id="toDoList">
+            <header>
+                <div class="header">
+                    <div class="col-2"></div>
+                    <div class="col-10">
+                        <h3>ToDo List</h3>
+                    </div>
+                </div>
+            </header>
+            <section>
+                <ul id="taskTable"></ul>
+                <form name="toDoForm" id="listForm">
+                    <ul>
+                        <li>
+                            <div class="col-2">
+                                <button type="submit">
+                                    <span class="addTask glyphicon glyphicon-plus"></span> 
+                                </button>         
+                            </div>
+                            <div class="col-10">
+                                <input class="newTask" type="text" placeholder="Add new task...">                              
+                            </div>
+                        </li>                            
+                    </ul>
+                </form> 
+            </section>     
+        </div>
+        <div class="alert-success"></div>
+        <div class="alert-danger"></div>
+
+        <script src="frontend/app.js"></script>
+    </body>
+</html>

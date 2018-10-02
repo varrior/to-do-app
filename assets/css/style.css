@@ -1,0 +1,151 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
+body {
+  background: #fff;
+  font-family: "Lato", sans-serif;
+  height: 100vh;
+  margin: 0; }
+
+#toDoList {
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  max-width: 700px;
+  position: relative;
+  margin-top: 90px; }
+  #toDoList header .header {
+    display: flex;
+    background: #121f31; }
+    #toDoList header .header .col-2 {
+      width: 10%;
+      border-right: 1px solid #e49ba7;
+      position: relative; }
+      #toDoList header .header .col-2:before {
+        border-left: 1px solid #e49ba7;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        content: ''; }
+    #toDoList header .header .col-10 {
+      width: 90%; }
+      #toDoList header .header .col-10 h3 {
+        color: #ddd;
+        font-size: 20px;
+        margin: 0;
+        padding: 20px 15px; }
+  #toDoList section ul {
+    padding: 0;
+    margin: 0; }
+    #toDoList section ul li {
+      display: flex;
+      list-style: none;
+      border-bottom: 1px solid #9eb2c0;
+      color: #2e3641; }
+      #toDoList section ul li .col-2 {
+        padding: 10px 0;
+        width: 10%;
+        text-align: center;
+        border-right: 1px solid #e49ba7;
+        position: relative; }
+        #toDoList section ul li .col-2 label {
+          display: block;
+          position: relative;
+          cursor: pointer;
+          font-size: 22px;
+          user-select: none; }
+          #toDoList section ul li .col-2 label input {
+            margin: 0;
+            vertical-align: middle;
+            position: absolute;
+            opacity: 0;
+            cursor: pointer; }
+            #toDoList section ul li .col-2 label input:checked ~ .customCheck {
+              background-color: transparent; }
+            #toDoList section ul li .col-2 label input:checked ~ .customCheck:after {
+              display: block; }
+          #toDoList section ul li .col-2 label .customCheck {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            height: 18px;
+            width: 18px;
+            border: 1px solid #9eb2c0; }
+            #toDoList section ul li .col-2 label .customCheck:after {
+              content: "";
+              position: absolute;
+              display: none; }
+            #toDoList section ul li .col-2 label .customCheck:after {
+              left: 5px;
+              top: 2px;
+              width: 5px;
+              height: 10px;
+              border: solid #1bda1b;
+              border-width: 0 3px 3px 0;
+              transform: rotate(45deg); }
+          #toDoList section ul li .col-2 label:hover input ~ .customCheck {
+            background-color: #ccc; }
+        #toDoList section ul li .col-2:before {
+          border-left: 1px solid #e49ba7;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 5px;
+          content: ''; }
+        #toDoList section ul li .col-2 button {
+          background: transparent;
+          border: none; }
+          #toDoList section ul li .col-2 button:focus {
+            outline: none; }
+        #toDoList section ul li .col-2 .addTask {
+          color: #9eb2c0;
+          font-size: 18px; }
+      #toDoList section ul li .col-10 {
+        padding: 10px 20px 10px 15px;
+        width: 90%;
+        text-align: left; }
+        #toDoList section ul li .col-10 p {
+          font-size: 18px;
+          float: left;
+          margin: 0; }
+        #toDoList section ul li .col-10 span {
+          float: right;
+          font-size: 18px;
+          top: 4px; }
+          #toDoList section ul li .col-10 span:hover {
+            cursor: pointer; }
+        #toDoList section ul li .col-10 .newTask {
+          border: none;
+          width: 100%;
+          height: 100%; }
+          #toDoList section ul li .col-10 .newTask:focus {
+            outline: none; }
+        #toDoList section ul li .col-10:hover {
+          cursor: move; }
+    #toDoList section ul li.taskDone {
+      color: #9eb2c0; }
+      #toDoList section ul li.taskDone .col-10 p {
+        text-decoration: line-through; }
+    #toDoList section ul li.over {
+      transform: scale(1.1, 1.1); }
+
+.alert-success {
+  max-width: 700px;
+  margin: 20px auto;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px; }
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px; }

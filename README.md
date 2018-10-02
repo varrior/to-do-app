@@ -1,4 +1,5 @@
 <h1>Simple to do app</h1>
+This is frontend and backend simple "to-do" application. Live preview is on heroku: https://to-do-app123.herokuapp.com/
 
 <h1>Requirements</h1>
 This application requires installation of NodeJS and MongoDB prior to running.
